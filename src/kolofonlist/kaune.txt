@@ -1,0 +1,8 @@
+Athlete 1
+
+Name: kaune
+Address: male
+Birthday: 2001
+Main Event: tj
+Second Event: tj
+---------------------------------

@@ -1,0 +1,8 @@
+Athlete 1
+
+Name: david
+Address: male
+Birthday: 2001
+Main Event: a
+Second Event: a
+---------------------------------

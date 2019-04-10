@@ -86,29 +86,38 @@ public class KolofonList {
                     }
            
            //Direct file to certain memory location
-           File ff = new File("C:\\Users\\HenryHwang\\Documents\\NetBeansProjects\\KolofonList");
+           //File ff = new File("C:\\Users\\HenryHwang\\Documents\\NetBeansProjects\\KolofonList");
+           File ff = new File("src/kolofonlist/");
            //Create tempoary file name and direct it to its location
-           File f = File.createTempFile(name, ".txt", ff);
-           
+           File f = new File("src/kolofonlist/" + name + ".txt");
+           f.createNewFile();
+                 
            //Get the tempoary file name
            String fName = f.getName();
            //Try to open the file and print
-           PrintWriter fOut = new PrintWriter(new FileWriter(fName,true));
+           BufferedWriter fOut = new BufferedWriter (new FileWriter(f,true));
            //Display the path of the tempoary file
            System.out.println(f.getPath());
            
            //Mixed all infomation
-           String info = "Athlete " + (i+1)+"\n" + "\nName: " + name + "\nAddress: " + gender
+           String info = "Athlete " + (i+1)+"\n" + "\nName: " + name + "\nGender: " + gender
                    + "\nBirthday: " + birth + "\nMain Event: " + main + "\nSecond Event: " + second
                    +"\n---------------------------------";
+           
+           fOut.write("Athlete " + (i+1) + ": ");
+           fOut.newLine();
+           fOut.write("Name: " + name);
            //Display the info on the file already set
            fileOut.println(info);
            //Display the info on the tempoary file
-           fOut.println(info);
+           //fOut.write(info);
+           //fOut.newLine();
+          fOut.close();
        }
            JOptionPane.showMessageDialog(null,"Thanks for using our service!");
            //Close the file
            fileOut.close(); 
+           
        }
     }
     
